@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>note Analytics</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #f1f5f9;
+      color: #1e293b;
+      min-height: 100vh;
+    }
+
+    header {
+      background: #fff;
+      border-bottom: 1px solid #e2e8f0;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    header h1 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #41c9b4;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    #last-updated {
+      font-size: 0.8rem;
+      color: #94a3b8;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    /* Summary cards */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,.06);
+    }
+
+    .card-label {
+      font-size: 0.75rem;
+      color: #64748b;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.4rem;
+    }
+
+    .card-value {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #0f172a;
+      line-height: 1;
+    }
+
+    .card-sub {
+      font-size: 0.75rem;
+      color: #94a3b8;
+      margin-top: 0.3rem;
+    }
+
+    /* Chart panels */
+    .panel {
+      background: #fff;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,.06);
+    }
+
+    .panel h2 {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #475569;
+      margin-bottom: 1.25rem;
+    }
+
+    .chart-wrap {
+      position: relative;
+      height: 300px;
+    }
+
+    /* Ranking table */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.875rem;
+    }
+
+    th {
+      text-align: left;
+      padding: 0.5rem 0.75rem;
+      color: #64748b;
+      font-weight: 500;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    td {
+      padding: 0.65rem 0.75rem;
+      border-bottom: 1px solid #f1f5f9;
+      color: #334155;
+    }
+
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: #f8fafc; }
+
+    td.rank {
+      font-weight: 700;
+      color: #94a3b8;
+      width: 2rem;
+    }
+
+    td.title {
+      max-width: 400px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    td.title a {
+      color: #334155;
+      text-decoration: none;
+    }
+    td.title a:hover { color: #41c9b4; }
+
+    td.num {
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+      font-weight: 600;
+    }
+
+    .badge-pv { color: #6366f1; }
+
+    #error {
+      background: #fef2f2;
+      border: 1px solid #fecaca;
+      color: #b91c1c;
+      border-radius: 8px;
+      padding: 1rem 1.5rem;
+      display: none;
+    }
+
+    #loading {
+      text-align: center;
+      padding: 4rem;
+      color: #94a3b8;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>📊 note Analytics</h1>
+  <span id="last-updated">読み込み中...</span>
+</header>
+
+<main>
+  <div id="error"></div>
+  <div id="loading">データを読み込んでいます...</div>
+
+  <div id="content" style="display:none; display:flex; flex-direction:column; gap:1.5rem;">
+    <div class="cards">
+      <div class="card">
+        <div class="card-label">総ページビュー</div>
+        <div class="card-value" id="total-pv">—</div>
+        <div class="card-sub" id="pv-delta"></div>
+      </div>
+      <div class="card">
+        <div class="card-label">記事数</div>
+        <div class="card-value" id="total-articles">—</div>
+      </div>
+      <div class="card">
+        <div class="card-label">総いいね数</div>
+        <div class="card-value" id="total-likes">—</div>
+      </div>
+      <div class="card">
+        <div class="card-label">データ収集日数</div>
+        <div class="card-value" id="total-days">—</div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h2>日次PV推移（全記事合計）</h2>
+      <div class="chart-wrap">
+        <canvas id="trend-chart"></canvas>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h2>記事別PV ランキング Top 10</h2>
+      <div class="chart-wrap" style="height:360px;">
+        <canvas id="ranking-chart"></canvas>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h2>記事一覧（PV順）</h2>
+      <table id="articles-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>タイトル</th>
+            <th style="text-align:right">累計PV</th>
+            <th style="text-align:right">いいね</th>
+            <th style="text-align:right">公開日</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+</main>
+
+<script>
+const DATA_URL = './data/all_stats.json';
+
+function fmt(n) {
+  return n == null ? '—' : Number(n).toLocaleString('ja-JP');
+}
+
+function shortTitle(t, max = 40) {
+  return t.length > max ? t.slice(0, max) + '…' : t;
+}
+
+// Compute daily increments from cumulative PV history
+function dailyIncrements(pvHistory) {
+  return pvHistory.map((v, i) => {
+    if (i === 0 || v == null || pvHistory[i - 1] == null) return null;
+    const diff = v - pvHistory[i - 1];
+    return diff >= 0 ? diff : null; // ignore negative (data correction)
+  });
+}
+
+async function main() {
+  const loading = document.getElementById('loading');
+  const content = document.getElementById('content');
+  const errorEl = document.getElementById('error');
+
+  let db;
+  try {
+    const resp = await fetch(DATA_URL);
+    if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+    db = await resp.json();
+  } catch (e) {
+    loading.style.display = 'none';
+    errorEl.style.display = 'block';
+    errorEl.textContent =
+      'データファイルが見つかりません。GitHub Actionsを一度手動実行してデータを収集してください。 (' + e.message + ')';
+    return;
+  }
+
+  loading.style.display = 'none';
+  content.style.display = 'flex';
+
+  const { dates, articles } = db;
+
+  // Summary cards
+  const totalPv = articles.reduce((s, a) => s + (a.total_pv || 0), 0);
+  const totalLikes = articles.reduce((s, a) => s + (a.like_count || 0), 0);
+
+  document.getElementById('last-updated').textContent = `最終更新: ${db.last_updated}`;
+  document.getElementById('total-pv').textContent = fmt(totalPv);
+  document.getElementById('total-articles').textContent = fmt(articles.length);
+  document.getElementById('total-likes').textContent = fmt(totalLikes);
+  document.getElementById('total-days').textContent = fmt(dates.length);
+
+  // PV delta (yesterday vs day before)
+  if (dates.length >= 2) {
+    const todayIdx = dates.length - 1;
+    const yesterdayIdx = dates.length - 2;
+    const todayTotal = articles.reduce((s, a) => {
+      const v = a.pv_history[todayIdx];
+      const p = a.pv_history[yesterdayIdx];
+      return s + (v != null && p != null ? Math.max(0, v - p) : 0);
+    }, 0);
+    document.getElementById('pv-delta').textContent =
+      `昨日の増分: +${fmt(todayTotal)} PV`;
+  }
+
+  // --- Trend chart (daily total PV) ---
+  const dailyTotals = dates.map((_, di) => {
+    if (di === 0) return null;
+    return articles.reduce((s, a) => {
+      const v = a.pv_history[di];
+      const p = a.pv_history[di - 1];
+      if (v == null || p == null) return s;
+      const diff = v - p;
+      return s + (diff >= 0 ? diff : 0);
+    }, 0);
+  });
+
+  const trendCtx = document.getElementById('trend-chart').getContext('2d');
+  new Chart(trendCtx, {
+    type: 'line',
+    data: {
+      labels: dates,
+      datasets: [{
+        label: '日次PV',
+        data: dailyTotals,
+        borderColor: '#6366f1',
+        backgroundColor: 'rgba(99,102,241,0.08)',
+        fill: true,
+        tension: 0.3,
+        pointRadius: dates.length > 30 ? 0 : 3,
+        pointHoverRadius: 5,
+        spanGaps: true,
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      interaction: { mode: 'index', intersect: false },
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            label: ctx => ` ${fmt(ctx.parsed.y)} PV`,
+          }
+        }
+      },
+      scales: {
+        x: {
+          ticks: {
+            maxTicksLimit: 12,
+            color: '#94a3b8',
+            font: { size: 11 },
+          },
+          grid: { color: '#f1f5f9' },
+        },
+        y: {
+          beginAtZero: true,
+          ticks: {
+            color: '#94a3b8',
+            font: { size: 11 },
+            callback: v => fmt(v),
+          },
+          grid: { color: '#f1f5f9' },
+        }
+      }
+    }
+  });
+
+  // --- Ranking chart (top 10 by total PV) ---
+  const top10 = articles.slice(0, 10);
+  const rankingCtx = document.getElementById('ranking-chart').getContext('2d');
+  new Chart(rankingCtx, {
+    type: 'bar',
+    data: {
+      labels: top10.map(a => shortTitle(a.name, 25)),
+      datasets: [{
+        label: '累計PV',
+        data: top10.map(a => a.total_pv),
+        backgroundColor: top10.map((_, i) => `hsla(${245 - i * 8},80%,${60 + i * 2}%,0.85)`),
+        borderRadius: 6,
+        borderSkipped: false,
+      }]
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            label: ctx => ` ${fmt(ctx.parsed.x)} PV`,
+          }
+        }
+      },
+      scales: {
+        x: {
+          beginAtZero: true,
+          ticks: {
+            color: '#94a3b8',
+            font: { size: 11 },
+            callback: v => fmt(v),
+          },
+          grid: { color: '#f1f5f9' },
+        },
+        y: {
+          ticks: {
+            color: '#334155',
+            font: { size: 12 },
+          },
+          grid: { display: false },
+        }
+      }
+    }
+  });
+
+  // --- Article table ---
+  const tbody = document.querySelector('#articles-table tbody');
+  articles.forEach((a, i) => {
+    const pubDate = a.published_at ? a.published_at.slice(0, 10) : '—';
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td class="rank">${i + 1}</td>
+      <td class="title">
+        <a href="https://note.com/notes/${a.key}" target="_blank" rel="noopener">
+          ${a.name || '(無題)'}
+        </a>
+      </td>
+      <td class="num badge-pv">${fmt(a.total_pv)}</td>
+      <td class="num">${fmt(a.like_count)}</td>
+      <td class="num" style="color:#94a3b8;font-weight:400">${pubDate}</td>
+    `;
+    tbody.appendChild(tr);
+  });
+}
+
+main();
+</script>
+</body>
+</html>
