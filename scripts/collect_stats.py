@@ -42,21 +42,20 @@ def fetch_all_stats(cookie_header: str) -> list[dict]:
             sys.exit(1)
 
         body = resp.json()
-        print(f"[DEBUG] status={resp.status_code} body={str(body)[:800]}")
         if body.get("error", {}).get("code") == "auth":
             print("ERROR: not_login — Cookie が無効か不完全です。NOTE_COOKIE_HEADER を更新してください。", file=sys.stderr)
             sys.exit(1)
 
         resp.raise_for_status()
         data = body.get("data", {})
-        stats = data.get("stats", [])
+        stats = data.get("note_stats", [])
 
         if not stats:
             break
 
         all_stats.extend(stats)
 
-        if data.get("is_last_page", True) or len(stats) < 20:
+        if data.get("last_page", True):
             break
 
         page += 1
@@ -96,13 +95,13 @@ def update_all_stats(today: str, fetched: list[dict]) -> None:
 
         article = articles_by_key[key]
         article["name"] = stat.get("name", article["name"])
-        article["total_pv"] = stat.get("pv", 0)
+        article["total_pv"] = stat.get("read_count", 0)
         article["like_count"] = stat.get("like_count", 0)
 
         while len(article["pv_history"]) < len(dates):
             article["pv_history"].append(None)
 
-        article["pv_history"][date_idx] = stat.get("pv", 0)
+        article["pv_history"][date_idx] = stat.get("read_count", 0)
 
     db["last_updated"] = today
     db["dates"] = dates
