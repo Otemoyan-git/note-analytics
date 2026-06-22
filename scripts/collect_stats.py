@@ -37,6 +37,9 @@ def fetch_all_stats(session_cookie: str) -> list[dict]:
             timeout=30,
         )
 
+        print(f"[DEBUG] status={resp.status_code} url={resp.url}")
+        print(f"[DEBUG] response={resp.text[:500]}")
+
         if resp.status_code == 401:
             print("ERROR: Session expired. Update NOTE_SESSION_COOKIE secret.", file=sys.stderr)
             sys.exit(1)
