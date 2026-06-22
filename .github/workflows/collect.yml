@@ -27,7 +27,7 @@ jobs:
 
       - name: Collect stats
         env:
-          NOTE_SESSION_COOKIE: ${{ secrets.NOTE_SESSION_COOKIE }}
+          NOTE_COOKIE_HEADER: ${{ secrets.NOTE_COOKIE_HEADER }}
         run: python scripts/collect_stats.py
 
       - name: Commit and push

@@ -14,9 +14,9 @@ BASE_URL = "https://note.com/api/v1"
 DATA_FILE = Path(__file__).parent.parent / "data" / "all_stats.json"
 
 
-def fetch_all_stats(session_cookie: str) -> list[dict]:
+def fetch_all_stats(cookie_header: str) -> list[dict]:
     headers = {
-        "Cookie": f"_note_session={session_cookie}",
+        "Cookie": cookie_header,
         "User-Agent": (
             "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
             "AppleWebKit/537.36 (KHTML, like Gecko) "
@@ -37,15 +37,17 @@ def fetch_all_stats(session_cookie: str) -> list[dict]:
             timeout=30,
         )
 
-        print(f"[DEBUG] status={resp.status_code} url={resp.url}")
-        print(f"[DEBUG] response={resp.text[:500]}")
-
         if resp.status_code == 401:
-            print("ERROR: Session expired. Update NOTE_SESSION_COOKIE secret.", file=sys.stderr)
+            print("ERROR: Authentication failed (401). Update NOTE_COOKIE_HEADER secret.", file=sys.stderr)
+            sys.exit(1)
+
+        body = resp.json()
+        if body.get("error", {}).get("code") == "auth":
+            print("ERROR: not_login — Cookie が無効か不完全です。NOTE_COOKIE_HEADER を更新してください。", file=sys.stderr)
             sys.exit(1)
 
         resp.raise_for_status()
-        data = resp.json().get("data", {})
+        data = body.get("data", {})
         stats = data.get("stats", [])
 
         if not stats:
@@ -117,15 +119,15 @@ def update_all_stats(today: str, fetched: list[dict]) -> None:
 
 
 def main() -> None:
-    session_cookie = os.environ.get("NOTE_SESSION_COOKIE", "").strip()
-    if not session_cookie:
-        print("ERROR: NOTE_SESSION_COOKIE environment variable is not set.", file=sys.stderr)
+    cookie_header = os.environ.get("NOTE_COOKIE_HEADER", "").strip()
+    if not cookie_header:
+        print("ERROR: NOTE_COOKIE_HEADER environment variable is not set.", file=sys.stderr)
         sys.exit(1)
 
     today = datetime.now(JST).strftime("%Y-%m-%d")
     print(f"Collecting stats for {today} ...")
 
-    fetched = fetch_all_stats(session_cookie)
+    fetched = fetch_all_stats(cookie_header)
     print(f"Fetched {len(fetched)} articles from note.com API.")
 
     update_all_stats(today, fetched)
