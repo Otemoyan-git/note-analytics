@@ -206,14 +206,14 @@
     </div>
 
     <div class="panel">
-      <h2>日次PV推移（全記事合計）</h2>
-      <div class="chart-wrap">
-        <canvas id="trend-chart"></canvas>
+      <h2>直近1週間 PV上昇 Top 10</h2>
+      <div class="chart-wrap" style="height:360px;">
+        <canvas id="weekly-growth-chart"></canvas>
       </div>
     </div>
 
     <div class="panel">
-      <h2>記事別PV ランキング Top 10</h2>
+      <h2>記事別PV ランキング Top 10（累計）</h2>
       <div class="chart-wrap" style="height:360px;">
         <canvas id="ranking-chart"></canvas>
       </div>
@@ -248,13 +248,34 @@ function shortTitle(t, max = 40) {
   return t.length > max ? t.slice(0, max) + '…' : t;
 }
 
-// Compute daily increments from cumulative PV history
-function dailyIncrements(pvHistory) {
-  return pvHistory.map((v, i) => {
-    if (i === 0 || v == null || pvHistory[i - 1] == null) return null;
-    const diff = v - pvHistory[i - 1];
-    return diff >= 0 ? diff : null; // ignore negative (data correction)
-  });
+// 直近7日間のPV増加数を計算（データが7日未満の場合は最古データとの差分）
+function calcWeeklyGrowth(article, dates) {
+  const n = dates.length;
+
+  let latestIdx = n - 1;
+  while (latestIdx >= 0 && article.pv_history[latestIdx] == null) latestIdx--;
+  if (latestIdx < 0) return 0;
+
+  const latestPv = article.pv_history[latestIdx];
+  const targetDate = new Date(dates[latestIdx]);
+  targetDate.setDate(targetDate.getDate() - 7);
+  const targetStr = targetDate.toISOString().slice(0, 10);
+
+  let baseIdx = -1;
+  for (let i = latestIdx - 1; i >= 0; i--) {
+    if (dates[i] <= targetStr && article.pv_history[i] != null) {
+      baseIdx = i;
+      break;
+    }
+  }
+  if (baseIdx < 0) {
+    for (let i = 0; i < latestIdx; i++) {
+      if (article.pv_history[i] != null) { baseIdx = i; break; }
+    }
+  }
+  if (baseIdx < 0) return 0;
+
+  return Math.max(0, latestPv - article.pv_history[baseIdx]);
 }
 
 async function main() {
@@ -303,64 +324,46 @@ async function main() {
       `昨日の増分: +${fmt(todayTotal)} PV`;
   }
 
-  // --- Trend chart (daily total PV) ---
-  const dailyTotals = dates.map((_, di) => {
-    if (di === 0) return null;
-    return articles.reduce((s, a) => {
-      const v = a.pv_history[di];
-      const p = a.pv_history[di - 1];
-      if (v == null || p == null) return s;
-      const diff = v - p;
-      return s + (diff >= 0 ? diff : 0);
-    }, 0);
-  });
+  // --- 直近1週間PV上昇 Top10 ---
+  const withGrowth = articles.map(a => ({
+    ...a,
+    weeklyGrowth: calcWeeklyGrowth(a, dates),
+  })).sort((a, b) => b.weeklyGrowth - a.weeklyGrowth).slice(0, 10);
 
-  const trendCtx = document.getElementById('trend-chart').getContext('2d');
-  new Chart(trendCtx, {
-    type: 'line',
+  const growthCtx = document.getElementById('weekly-growth-chart').getContext('2d');
+  new Chart(growthCtx, {
+    type: 'bar',
     data: {
-      labels: dates,
+      labels: withGrowth.map(a => shortTitle(a.name, 25)),
       datasets: [{
-        label: '日次PV',
-        data: dailyTotals,
-        borderColor: '#6366f1',
-        backgroundColor: 'rgba(99,102,241,0.08)',
-        fill: true,
-        tension: 0.3,
-        pointRadius: dates.length > 30 ? 0 : 3,
-        pointHoverRadius: 5,
-        spanGaps: true,
+        label: '1週間PV増加',
+        data: withGrowth.map(a => a.weeklyGrowth),
+        backgroundColor: withGrowth.map((_, i) => `hsla(${160 - i * 6},70%,${50 + i * 2}%,0.85)`),
+        borderRadius: 6,
+        borderSkipped: false,
       }]
     },
     options: {
+      indexAxis: 'y',
       responsive: true,
       maintainAspectRatio: false,
-      interaction: { mode: 'index', intersect: false },
       plugins: {
         legend: { display: false },
         tooltip: {
           callbacks: {
-            label: ctx => ` ${fmt(ctx.parsed.y)} PV`,
+            label: ctx => ` +${fmt(ctx.parsed.x)} PV`,
           }
         }
       },
       scales: {
         x: {
-          ticks: {
-            maxTicksLimit: 12,
-            color: '#94a3b8',
-            font: { size: 11 },
-          },
+          beginAtZero: true,
+          ticks: { color: '#94a3b8', font: { size: 11 }, callback: v => fmt(v) },
           grid: { color: '#f1f5f9' },
         },
         y: {
-          beginAtZero: true,
-          ticks: {
-            color: '#94a3b8',
-            font: { size: 11 },
-            callback: v => fmt(v),
-          },
-          grid: { color: '#f1f5f9' },
+          ticks: { color: '#334155', font: { size: 12 } },
+          grid: { display: false },
         }
       }
     }
