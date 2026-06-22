@@ -42,6 +42,7 @@ def fetch_all_stats(cookie_header: str) -> list[dict]:
             sys.exit(1)
 
         body = resp.json()
+        print(f"[DEBUG] status={resp.status_code} body={str(body)[:800]}")
         if body.get("error", {}).get("code") == "auth":
             print("ERROR: not_login — Cookie が無効か不完全です。NOTE_COOKIE_HEADER を更新してください。", file=sys.stderr)
             sys.exit(1)
