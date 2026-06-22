@@ -1,7 +1,8 @@
 {
-  "last_updated": "2026-06-22",
+  "last_updated": "2026-06-23",
   "dates": [
-    "2026-06-22"
+    "2026-06-22",
+    "2026-06-23"
   ],
   "articles": [
     {
@@ -11,6 +12,7 @@
       "total_pv": 4597,
       "like_count": 12,
       "pv_history": [
+        4597,
         4597
       ]
     },
@@ -21,6 +23,7 @@
       "total_pv": 745,
       "like_count": 5,
       "pv_history": [
+        745,
         745
       ]
     },
@@ -31,6 +34,7 @@
       "total_pv": 569,
       "like_count": 42,
       "pv_history": [
+        569,
         569
       ]
     },
@@ -41,6 +45,7 @@
       "total_pv": 539,
       "like_count": 31,
       "pv_history": [
+        539,
         539
       ]
     },
@@ -51,6 +56,7 @@
       "total_pv": 472,
       "like_count": 3,
       "pv_history": [
+        472,
         472
       ]
     },
@@ -58,10 +64,11 @@
       "key": "nba00b635e1d6",
       "name": "【新生活】社会人2年目まで友達とルームシェアをしてた意味",
       "published_at": "",
-      "total_pv": 415,
+      "total_pv": 416,
       "like_count": 11,
       "pv_history": [
-        415
+        415,
+        416
       ]
     },
     {
@@ -71,6 +78,7 @@
       "total_pv": 385,
       "like_count": 4,
       "pv_history": [
+        385,
         385
       ]
     },
@@ -81,6 +89,7 @@
       "total_pv": 349,
       "like_count": 34,
       "pv_history": [
+        349,
         349
       ]
     },
@@ -91,6 +100,7 @@
       "total_pv": 207,
       "like_count": 15,
       "pv_history": [
+        207,
         207
       ]
     },
@@ -101,6 +111,7 @@
       "total_pv": 199,
       "like_count": 2,
       "pv_history": [
+        199,
         199
       ]
     },
@@ -111,6 +122,7 @@
       "total_pv": 188,
       "like_count": 10,
       "pv_history": [
+        188,
         188
       ]
     },
@@ -121,6 +133,7 @@
       "total_pv": 187,
       "like_count": 4,
       "pv_history": [
+        187,
         187
       ]
     },
@@ -131,6 +144,7 @@
       "total_pv": 184,
       "like_count": 4,
       "pv_history": [
+        184,
         184
       ]
     },
@@ -141,6 +155,7 @@
       "total_pv": 160,
       "like_count": 7,
       "pv_history": [
+        160,
         160
       ]
     },
@@ -151,6 +166,7 @@
       "total_pv": 154,
       "like_count": 7,
       "pv_history": [
+        154,
         154
       ]
     },
@@ -161,6 +177,7 @@
       "total_pv": 150,
       "like_count": 5,
       "pv_history": [
+        150,
         150
       ]
     },
@@ -171,6 +188,7 @@
       "total_pv": 115,
       "like_count": 0,
       "pv_history": [
+        115,
         115
       ]
     },
@@ -181,6 +199,7 @@
       "total_pv": 112,
       "like_count": 10,
       "pv_history": [
+        112,
         112
       ]
     },
@@ -191,6 +210,7 @@
       "total_pv": 109,
       "like_count": 5,
       "pv_history": [
+        109,
         109
       ]
     },
@@ -201,6 +221,7 @@
       "total_pv": 108,
       "like_count": 5,
       "pv_history": [
+        108,
         108
       ]
     },
@@ -211,6 +232,7 @@
       "total_pv": 104,
       "like_count": 1,
       "pv_history": [
+        104,
         104
       ]
     },
@@ -218,10 +240,11 @@
       "key": "n5c679cdd25f0",
       "name": "「休みが多い＝楽」じゃなかった。社会人になって知った“休暇取得”のリアル",
       "published_at": "",
-      "total_pv": 99,
+      "total_pv": 100,
       "like_count": 4,
       "pv_history": [
-        99
+        99,
+        100
       ]
     },
     {
@@ -231,6 +254,7 @@
       "total_pv": 92,
       "like_count": 1,
       "pv_history": [
+        92,
         92
       ]
     },
@@ -241,6 +265,7 @@
       "total_pv": 90,
       "like_count": 6,
       "pv_history": [
+        90,
         90
       ]
     },
@@ -251,6 +276,7 @@
       "total_pv": 89,
       "like_count": 0,
       "pv_history": [
+        89,
         89
       ]
     },
@@ -261,6 +287,7 @@
       "total_pv": 89,
       "like_count": 2,
       "pv_history": [
+        89,
         89
       ]
     },
@@ -271,6 +298,7 @@
       "total_pv": 88,
       "like_count": 6,
       "pv_history": [
+        88,
         88
       ]
     },
@@ -281,6 +309,7 @@
       "total_pv": 85,
       "like_count": 9,
       "pv_history": [
+        85,
         85
       ]
     },
@@ -291,6 +320,7 @@
       "total_pv": 80,
       "like_count": 3,
       "pv_history": [
+        80,
         80
       ]
     },
@@ -301,6 +331,7 @@
       "total_pv": 73,
       "like_count": 7,
       "pv_history": [
+        73,
         73
       ]
     },
@@ -311,6 +342,7 @@
       "total_pv": 69,
       "like_count": 1,
       "pv_history": [
+        69,
         69
       ]
     },
@@ -321,6 +353,7 @@
       "total_pv": 67,
       "like_count": 3,
       "pv_history": [
+        67,
         67
       ]
     },
@@ -331,6 +364,7 @@
       "total_pv": 65,
       "like_count": 5,
       "pv_history": [
+        65,
         65
       ]
     },
@@ -341,6 +375,7 @@
       "total_pv": 61,
       "like_count": 4,
       "pv_history": [
+        61,
         61
       ]
     },
@@ -351,6 +386,7 @@
       "total_pv": 58,
       "like_count": 1,
       "pv_history": [
+        58,
         58
       ]
     },
@@ -361,6 +397,7 @@
       "total_pv": 53,
       "like_count": 0,
       "pv_history": [
+        53,
         53
       ]
     },
@@ -371,6 +408,7 @@
       "total_pv": 41,
       "like_count": 4,
       "pv_history": [
+        41,
         41
       ]
     },
@@ -378,10 +416,11 @@
       "key": "n16c707700ce0",
       "name": "なんとなく使うのはNG！20〜30代が夏ボーナスで買うべきもの",
       "published_at": "",
-      "total_pv": 39,
+      "total_pv": 40,
       "like_count": 4,
       "pv_history": [
-        39
+        39,
+        40
       ]
     },
     {
@@ -391,6 +430,7 @@
       "total_pv": 38,
       "like_count": 1,
       "pv_history": [
+        38,
         38
       ]
     },
@@ -401,6 +441,7 @@
       "total_pv": 38,
       "like_count": 3,
       "pv_history": [
+        38,
         38
       ]
     },
@@ -411,6 +452,7 @@
       "total_pv": 36,
       "like_count": 3,
       "pv_history": [
+        36,
         36
       ]
     },
@@ -421,6 +463,7 @@
       "total_pv": 35,
       "like_count": 1,
       "pv_history": [
+        35,
         35
       ]
     },
@@ -431,6 +474,7 @@
       "total_pv": 34,
       "like_count": 5,
       "pv_history": [
+        34,
         34
       ]
     },
@@ -441,6 +485,7 @@
       "total_pv": 31,
       "like_count": 1,
       "pv_history": [
+        31,
         31
       ]
     },
@@ -451,6 +496,7 @@
       "total_pv": 31,
       "like_count": 5,
       "pv_history": [
+        31,
         31
       ]
     },
@@ -461,6 +507,7 @@
       "total_pv": 31,
       "like_count": 0,
       "pv_history": [
+        31,
         31
       ]
     },
@@ -471,6 +518,7 @@
       "total_pv": 23,
       "like_count": 3,
       "pv_history": [
+        23,
         23
       ]
     },
@@ -481,6 +529,7 @@
       "total_pv": 23,
       "like_count": 2,
       "pv_history": [
+        23,
         23
       ]
     },
@@ -491,6 +540,7 @@
       "total_pv": 17,
       "like_count": 0,
       "pv_history": [
+        17,
         17
       ]
     },
@@ -501,6 +551,7 @@
       "total_pv": 12,
       "like_count": 2,
       "pv_history": [
+        12,
         12
       ]
     }
