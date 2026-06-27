@@ -203,12 +203,24 @@
         <div class="card-label">データ収集日数</div>
         <div class="card-value" id="total-days">—</div>
       </div>
+      <div class="card">
+        <div class="card-label">今週PV</div>
+        <div class="card-value" id="this-week-pv">—</div>
+        <div class="card-sub" id="week-over-week"></div>
+      </div>
     </div>
 
     <div class="panel">
       <h2>直近1週間 PV上昇 Top 10</h2>
       <div class="chart-wrap" style="height:360px;">
         <canvas id="weekly-growth-chart"></canvas>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h2>月次PV集計</h2>
+      <div class="chart-wrap" style="height:260px;">
+        <canvas id="monthly-chart"></canvas>
       </div>
     </div>
 
@@ -228,6 +240,8 @@
             <th>タイトル</th>
             <th style="text-align:right">累計PV</th>
             <th style="text-align:right">いいね</th>
+            <th style="text-align:right">経過日数</th>
+            <th style="text-align:right">日平均PV</th>
             <th style="text-align:right">公開日</th>
           </tr>
         </thead>
@@ -278,6 +292,38 @@ function calcWeeklyGrowth(article, dates) {
   return Math.max(0, latestPv - article.pv_history[baseIdx]);
 }
 
+function subtractDays(dateStr, days) {
+  const d = new Date(dateStr);
+  d.setDate(d.getDate() - days);
+  return d.toISOString().slice(0, 10);
+}
+
+function getPvAtDate(article, dates, targetDateStr) {
+  for (let i = dates.length - 1; i >= 0; i--) {
+    if (dates[i] <= targetDateStr && article.pv_history[i] != null) {
+      return article.pv_history[i];
+    }
+  }
+  return null;
+}
+
+function calcMonthlyStats(articles, dates) {
+  const monthMap = {};
+  dates.forEach((d, i) => { monthMap[d.slice(0, 7)] = i; });
+  const months = Object.keys(monthMap).sort();
+  return months.map((month, mi) => {
+    const endIdx = monthMap[month];
+    const startIdx = mi > 0 ? monthMap[months[mi - 1]] : -1;
+    let growth = 0;
+    articles.forEach(a => {
+      const endPv = a.pv_history[endIdx];
+      const startPv = startIdx >= 0 ? (a.pv_history[startIdx] ?? 0) : 0;
+      if (endPv != null) growth += endPv - startPv;
+    });
+    return { month, growth: Math.max(0, growth) };
+  });
+}
+
 async function main() {
   const loading = document.getElementById('loading');
   const content = document.getElementById('content');
@@ -322,6 +368,31 @@ async function main() {
     }, 0);
     document.getElementById('pv-delta').textContent =
       `昨日の増分: +${fmt(todayTotal)} PV`;
+  }
+
+  // 今週PV & 先週比
+  if (dates.length >= 1) {
+    const latest = dates[dates.length - 1];
+    const d7  = subtractDays(latest, 7);
+    const d14 = subtractDays(latest, 14);
+    const thisWeek = articles.reduce((s, a) => {
+      const t = getPvAtDate(a, dates, latest);
+      const b = getPvAtDate(a, dates, d7);
+      return s + (t != null && b != null ? Math.max(0, t - b) : 0);
+    }, 0);
+    const lastWeek = articles.reduce((s, a) => {
+      const t = getPvAtDate(a, dates, d7);
+      const b = getPvAtDate(a, dates, d14);
+      return s + (t != null && b != null ? Math.max(0, t - b) : 0);
+    }, 0);
+    document.getElementById('this-week-pv').textContent = fmt(thisWeek);
+    if (lastWeek > 0) {
+      const ratioNum = (thisWeek - lastWeek) / lastWeek * 100;
+      const sign = ratioNum >= 0 ? '+' : '';
+      const el = document.getElementById('week-over-week');
+      el.textContent = `先週比 ${sign}${ratioNum.toFixed(1)}%`;
+      el.style.color = ratioNum >= 0 ? '#10b981' : '#ef4444';
+    }
   }
 
   // --- 直近1週間PV上昇 Top10 ---
@@ -417,10 +488,48 @@ async function main() {
     }
   });
 
+  // --- 月次PV集計 ---
+  const monthlyStats = calcMonthlyStats(articles, dates);
+  if (monthlyStats.length > 0) {
+    const monthlyCtx = document.getElementById('monthly-chart').getContext('2d');
+    new Chart(monthlyCtx, {
+      type: 'bar',
+      data: {
+        labels: monthlyStats.map(m => m.month),
+        datasets: [{
+          label: '月間PV',
+          data: monthlyStats.map(m => m.growth),
+          backgroundColor: monthlyStats.map((_, i) =>
+            `hsla(${205 + i * 8},65%,${52 + i % 4 * 4}%,0.85)`),
+          borderRadius: 6,
+          borderSkipped: false,
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          tooltip: { callbacks: { label: ctx => ` ${fmt(ctx.parsed.y)} PV` } }
+        },
+        scales: {
+          x: { ticks: { color: '#94a3b8', font: { size: 11 } }, grid: { color: '#f1f5f9' } },
+          y: { beginAtZero: true, ticks: { color: '#94a3b8', font: { size: 11 }, callback: v => fmt(v) }, grid: { color: '#f1f5f9' } }
+        }
+      }
+    });
+  }
+
   // --- Article table ---
   const tbody = document.querySelector('#articles-table tbody');
   articles.forEach((a, i) => {
     const pubDate = a.published_at ? a.published_at.slice(0, 10) : '—';
+    const daysElapsed = a.published_at
+      ? Math.max(1, Math.floor((Date.now() - new Date(a.published_at)) / 86400000))
+      : null;
+    const dailyAvg = daysElapsed != null && a.total_pv
+      ? (a.total_pv / daysElapsed).toFixed(1)
+      : null;
     const tr = document.createElement('tr');
     tr.innerHTML = `
       <td class="rank">${i + 1}</td>
@@ -431,6 +540,8 @@ async function main() {
       </td>
       <td class="num badge-pv">${fmt(a.total_pv)}</td>
       <td class="num">${fmt(a.like_count)}</td>
+      <td class="num" style="color:#64748b">${daysElapsed != null ? fmt(daysElapsed) + '日' : '—'}</td>
+      <td class="num" style="color:#64748b">${dailyAvg != null ? dailyAvg : '—'}</td>
       <td class="num" style="color:#94a3b8;font-weight:400">${pubDate}</td>
     `;
     tbody.appendChild(tr);
