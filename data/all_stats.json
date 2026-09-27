@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-27",
+  "last_updated": "2026-09-28",
   "dates": [
     "2026-06-22",
     "2026-06-23",
@@ -97,14 +97,15 @@
     "2026-09-24",
     "2026-09-25",
     "2026-09-26",
-    "2026-09-27"
+    "2026-09-27",
+    "2026-09-28"
   ],
   "articles": [
     {
       "key": "n438e04304aca",
       "name": "家のインターネット回線をahamo光にしたけど繋がらないので原因を調べてみた",
       "published_at": "",
-      "total_pv": 4606,
+      "total_pv": 4607,
       "like_count": 12,
       "pv_history": [
         4597,
@@ -203,7 +204,8 @@
         4605,
         4605,
         4605,
-        4606
+        4606,
+        4607
       ]
     },
     {
@@ -309,6 +311,7 @@
         752,
         752,
         752,
+        752,
         752
       ]
     },
@@ -316,7 +319,7 @@
       "key": "n0e25b4863a46",
       "name": "SES→大手SIerに転職して3か月で休職しました",
       "published_at": "",
-      "total_pv": 600,
+      "total_pv": 601,
       "like_count": 43,
       "pv_history": [
         569,
@@ -415,7 +418,8 @@
         600,
         600,
         600,
-        600
+        600,
+        601
       ]
     },
     {
@@ -481,6 +485,7 @@
         545,
         545,
         545,
+        546,
         546,
         546,
         546,
@@ -627,6 +632,7 @@
         521,
         521,
         521,
+        522,
         522
       ]
     },
@@ -733,6 +739,7 @@
         440,
         440,
         440,
+        440,
         440
       ]
     },
@@ -829,6 +836,7 @@
         405,
         405,
         405,
+        406,
         406,
         406,
         406,
@@ -945,6 +953,7 @@
         356,
         357,
         357,
+        357,
         357
       ]
     },
@@ -952,7 +961,7 @@
       "key": "n7f62e760287a",
       "name": "「定時で帰れ」と言われるのが、実は一番しんどいかも。",
       "published_at": "",
-      "total_pv": 299,
+      "total_pv": 301,
       "like_count": 4,
       "pv_history": [
         187,
@@ -1051,14 +1060,15 @@
         297,
         298,
         299,
-        299
+        299,
+        301
       ]
     },
     {
       "key": "n0204af8acc04",
       "name": "何がそんなに忙しいの？｜大手SIerへの転職を考える人に伝えたい現場のリアルと生存戦略",
       "published_at": "",
-      "total_pv": 221,
+      "total_pv": 222,
       "like_count": 10,
       "pv_history": [
         188,
@@ -1157,7 +1167,8 @@
         221,
         221,
         221,
-        221
+        221,
+        222
       ]
     },
     {
@@ -1261,6 +1272,7 @@
         217,
         217,
         217,
+        218,
         218,
         218,
         218
@@ -1369,6 +1381,7 @@
         217,
         217,
         218,
+        218,
         218
       ]
     },
@@ -1475,6 +1488,7 @@
         188,
         188,
         188,
+        188,
         188
       ]
     },
@@ -1482,7 +1496,7 @@
       "key": "naac8792bff39",
       "name": "Logicoolからコトコト系キーボードが出たらしいので早速買ってみた",
       "published_at": "",
-      "total_pv": 175,
+      "total_pv": 176,
       "like_count": 2,
       "pv_history": [
         null,
@@ -1581,7 +1595,8 @@
         166,
         168,
         171,
-        175
+        175,
+        176
       ]
     },
     {
@@ -1687,6 +1702,7 @@
         165,
         165,
         166,
+        168,
         168
       ]
     },
@@ -1766,6 +1782,7 @@
         161,
         161,
         161,
+        162,
         162,
         162,
         162,
@@ -1899,6 +1916,7 @@
         160,
         161,
         161,
+        161,
         161
       ]
     },
@@ -2005,6 +2023,7 @@
         156,
         156,
         156,
+        156,
         156
       ]
     },
@@ -2012,7 +2031,7 @@
       "key": "n6e4166f37427",
       "name": "「よしなに」って何？20代が戸惑う昭和ビジネス用語紹介",
       "published_at": "",
-      "total_pv": 154,
+      "total_pv": 155,
       "like_count": 2,
       "pv_history": [
         89,
@@ -2111,14 +2130,15 @@
         151,
         151,
         151,
-        154
+        154,
+        155
       ]
     },
     {
       "key": "n4a5be5d40e96",
       "name": "【第二新卒】「興味ある技術は？」の質問に答えられるようになったら無双した",
       "published_at": "",
-      "total_pv": 129,
+      "total_pv": 130,
       "like_count": 0,
       "pv_history": [
         115,
@@ -2217,7 +2237,8 @@
         128,
         129,
         129,
-        129
+        129,
+        130
       ]
     },
     {
@@ -2301,6 +2322,7 @@
         115,
         115,
         116,
+        117,
         117,
         117,
         117,
@@ -2429,6 +2451,7 @@
         114,
         114,
         114,
+        114,
         114
       ]
     },
@@ -2516,6 +2539,7 @@
         112,
         112,
         112,
+        113,
         113,
         113,
         113,
@@ -2641,6 +2665,7 @@
         112,
         112,
         112,
+        112,
         112
       ]
     },
@@ -2747,6 +2772,7 @@
         108,
         108,
         108,
+        108,
         108
       ]
     },
@@ -2754,7 +2780,7 @@
       "key": "n16c707700ce0",
       "name": "なんとなく使うのはNG！20〜30代が夏ボーナスで買うべきもの",
       "published_at": "",
-      "total_pv": 105,
+      "total_pv": 106,
       "like_count": 5,
       "pv_history": [
         39,
@@ -2853,14 +2879,15 @@
         104,
         105,
         105,
-        105
+        105,
+        106
       ]
     },
     {
       "key": "n7d454061e506",
       "name": "労働組合からの脱出奮闘記#1",
       "published_at": "",
-      "total_pv": 98,
+      "total_pv": 99,
       "like_count": 0,
       "pv_history": [
         89,
@@ -2959,7 +2986,8 @@
         97,
         97,
         98,
-        98
+        98,
+        99
       ]
     },
     {
@@ -2983,6 +3011,7 @@
         90,
         90,
         90,
+        91,
         91,
         91,
         91,
@@ -3171,6 +3200,7 @@
         89,
         89,
         89,
+        89,
         89
       ]
     },
@@ -3277,6 +3307,7 @@
         86,
         86,
         86,
+        86,
         86
       ]
     },
@@ -3287,6 +3318,7 @@
       "total_pv": 85,
       "like_count": 9,
       "pv_history": [
+        85,
         85,
         85,
         85,
@@ -3489,6 +3521,7 @@
         81,
         81,
         81,
+        81,
         81
       ]
     },
@@ -3587,6 +3620,7 @@
         74,
         74,
         74,
+        75,
         75,
         75,
         75,
@@ -3701,6 +3735,7 @@
         71,
         71,
         71,
+        71,
         71
       ]
     },
@@ -3711,6 +3746,7 @@
       "total_pv": 65,
       "like_count": 5,
       "pv_history": [
+        65,
         65,
         65,
         65,
@@ -3913,6 +3949,7 @@
         62,
         62,
         62,
+        63,
         63
       ]
     },
@@ -3923,6 +3960,7 @@
       "total_pv": 58,
       "like_count": 1,
       "pv_history": [
+        58,
         58,
         58,
         58,
@@ -4125,6 +4163,7 @@
         54,
         54,
         54,
+        54,
         54
       ]
     },
@@ -4193,6 +4232,7 @@
         45,
         45,
         45,
+        46,
         46,
         46,
         46,
@@ -4337,6 +4377,7 @@
         44,
         44,
         44,
+        44,
         44
       ]
     },
@@ -4344,7 +4385,7 @@
       "key": "na098b5cb27cd",
       "name": "昔みたいに熱中できない？社会人が「大人の趣味」を楽しむコツ",
       "published_at": "",
-      "total_pv": 43,
+      "total_pv": 44,
       "like_count": 3,
       "pv_history": [
         null,
@@ -4443,7 +4484,8 @@
         43,
         43,
         43,
-        43
+        43,
+        44
       ]
     },
     {
@@ -4471,6 +4513,7 @@
         38,
         38,
         38,
+        39,
         39,
         39,
         39,
@@ -4655,6 +4698,7 @@
         39,
         39,
         39,
+        39,
         39
       ]
     },
@@ -4702,6 +4746,7 @@
         37,
         37,
         37,
+        38,
         38,
         38,
         38,
@@ -4867,6 +4912,7 @@
         37,
         37,
         37,
+        37,
         37
       ]
     },
@@ -4877,6 +4923,7 @@
       "total_pv": 35,
       "like_count": 1,
       "pv_history": [
+        35,
         35,
         35,
         35,
@@ -5079,6 +5126,7 @@
         32,
         32,
         32,
+        32,
         32
       ]
     },
@@ -5089,6 +5137,7 @@
       "total_pv": 31,
       "like_count": 1,
       "pv_history": [
+        31,
         31,
         31,
         31,
@@ -5291,6 +5340,7 @@
         31,
         31,
         31,
+        31,
         31
       ]
     },
@@ -5298,7 +5348,7 @@
       "key": "n920a9124fe2a",
       "name": "「今すぐ決めなくていい」子供なし共働き夫婦の終わらない対話",
       "published_at": "",
-      "total_pv": 29,
+      "total_pv": 30,
       "like_count": 31,
       "pv_history": [
         null,
@@ -5397,14 +5447,15 @@
         27,
         29,
         29,
-        29
+        29,
+        30
       ]
     },
     {
       "key": "n31d4c2ef5d20",
       "name": "初めての転職が不安なあなたへ。外の世界は驚くほど広くて優しい",
       "published_at": "",
-      "total_pv": 26,
+      "total_pv": 27,
       "like_count": 8,
       "pv_history": [
         null,
@@ -5503,7 +5554,8 @@
         24,
         24,
         26,
-        26
+        26,
+        27
       ]
     },
     {
@@ -5559,6 +5611,7 @@
         23,
         23,
         23,
+        24,
         24,
         24,
         24,
@@ -5715,7 +5768,115 @@
         23,
         23,
         23,
+        23,
         23
+      ]
+    },
+    {
+      "key": "n919012e2e0b0",
+      "name": "【発注者の本音】ずっと指名されるフリーランスエンジニアの条件",
+      "published_at": "",
+      "total_pv": 20,
+      "like_count": 3,
+      "pv_history": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        13,
+        15,
+        15,
+        15,
+        19,
+        19,
+        20
       ]
     },
     {
@@ -5821,111 +5982,6 @@
         19,
         19,
         19,
-        19
-      ]
-    },
-    {
-      "key": "n919012e2e0b0",
-      "name": "【発注者の本音】ずっと指名されるフリーランスエンジニアの条件",
-      "published_at": "",
-      "total_pv": 19,
-      "like_count": 3,
-      "pv_history": [
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        13,
-        15,
-        15,
-        15,
         19,
         19
       ]
@@ -6033,6 +6089,7 @@
         12,
         12,
         12,
+        12,
         12
       ]
     },
@@ -6040,7 +6097,7 @@
       "key": "na087d43aa9ca",
       "name": "残業でボロボロの夜を救う。帰宅後の面倒をゼロにする神アイテム5選",
       "published_at": "",
-      "total_pv": 11,
+      "total_pv": 12,
       "like_count": 3,
       "pv_history": [
         null,
@@ -6139,7 +6196,115 @@
         11,
         11,
         11,
-        11
+        11,
+        12
+      ]
+    },
+    {
+      "key": "nb6daa1f3e007",
+      "name": "AIが作ったパワポを顧客に出すのは手抜き？意外な落とし穴",
+      "published_at": "",
+      "total_pv": 4,
+      "like_count": 4,
+      "pv_history": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        4
       ]
     }
   ]
