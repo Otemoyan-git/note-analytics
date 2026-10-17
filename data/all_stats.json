@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-17",
+  "last_updated": "2026-10-18",
   "dates": [
     "2026-06-22",
     "2026-06-23",
@@ -117,7 +117,8 @@
     "2026-10-14",
     "2026-10-15",
     "2026-10-16",
-    "2026-10-17"
+    "2026-10-17",
+    "2026-10-18"
   ],
   "articles": [
     {
@@ -239,6 +240,7 @@
         4607,
         4607,
         4607,
+        4608,
         4608,
         4608,
         4608,
@@ -369,6 +371,7 @@
         757,
         758,
         758,
+        758,
         758
       ]
     },
@@ -494,6 +497,7 @@
         605,
         607,
         609,
+        610,
         610,
         610
       ]
@@ -621,6 +625,7 @@
         547,
         547,
         547,
+        547,
         547
       ]
     },
@@ -628,7 +633,7 @@
       "key": "nd9dcf3516029",
       "name": "PCの作業効率を爆上げする神ツール",
       "published_at": "",
-      "total_pv": 532,
+      "total_pv": 533,
       "like_count": 3,
       "pv_history": [
         472,
@@ -747,7 +752,8 @@
         532,
         532,
         532,
-        532
+        532,
+        533
       ]
     },
     {
@@ -873,6 +879,7 @@
         444,
         444,
         444,
+        444,
         444
       ]
     },
@@ -984,6 +991,7 @@
         406,
         406,
         406,
+        407,
         407,
         407,
         407,
@@ -1125,6 +1133,7 @@
         357,
         357,
         357,
+        357,
         357
       ]
     },
@@ -1132,7 +1141,7 @@
       "key": "n7f62e760287a",
       "name": "「定時で帰れ」と言われるのが、実は一番しんどいかも。",
       "published_at": "",
-      "total_pv": 323,
+      "total_pv": 324,
       "like_count": 4,
       "pv_history": [
         187,
@@ -1251,7 +1260,8 @@
         318,
         321,
         322,
-        323
+        323,
+        324
       ]
     },
     {
@@ -1377,6 +1387,7 @@
         224,
         225,
         225,
+        225,
         225
       ]
     },
@@ -1489,6 +1500,7 @@
         218,
         218,
         220,
+        221,
         221,
         221,
         221,
@@ -1629,6 +1641,7 @@
         218,
         218,
         218,
+        218,
         218
       ]
     },
@@ -1636,7 +1649,7 @@
       "key": "naac8792bff39",
       "name": "Logicoolからコトコト系キーボードが出たらしいので早速買ってみた",
       "published_at": "",
-      "total_pv": 215,
+      "total_pv": 217,
       "like_count": 2,
       "pv_history": [
         null,
@@ -1755,7 +1768,8 @@
         209,
         209,
         212,
-        215
+        215,
+        217
       ]
     },
     {
@@ -1881,6 +1895,7 @@
         188,
         188,
         189,
+        189,
         189
       ]
     },
@@ -1888,7 +1903,7 @@
       "key": "n6e4166f37427",
       "name": "「よしなに」って何？20代が戸惑う昭和ビジネス用語紹介",
       "published_at": "",
-      "total_pv": 185,
+      "total_pv": 186,
       "like_count": 2,
       "pv_history": [
         89,
@@ -2007,14 +2022,15 @@
         180,
         182,
         184,
-        185
+        185,
+        186
       ]
     },
     {
       "key": "nc0da35d03efd",
       "name": "出張のプロも使う！飛行機移動を劇的にラクにする裏技アイテム5選",
       "published_at": "",
-      "total_pv": 175,
+      "total_pv": 177,
       "like_count": 1,
       "pv_history": [
         92,
@@ -2133,7 +2149,8 @@
         173,
         174,
         174,
-        175
+        175,
+        177
       ]
     },
     {
@@ -2255,6 +2272,7 @@
         163,
         163,
         163,
+        164,
         164,
         164,
         164,
@@ -2385,6 +2403,7 @@
         162,
         163,
         163,
+        163,
         163
       ]
     },
@@ -2505,6 +2524,7 @@
         156,
         156,
         156,
+        157,
         157,
         157,
         157,
@@ -2637,6 +2657,7 @@
         132,
         132,
         132,
+        132,
         132
       ]
     },
@@ -2748,6 +2769,7 @@
         116,
         116,
         116,
+        118,
         118,
         118,
         118,
@@ -2889,6 +2911,7 @@
         117,
         117,
         117,
+        117,
         117
       ]
     },
@@ -2896,7 +2919,7 @@
       "key": "nba3ed6b9c9d4",
       "name": "「ITエンジニアって全員コード書くんですよね？」という誤解",
       "published_at": "",
-      "total_pv": 115,
+      "total_pv": 116,
       "like_count": 10,
       "pv_history": [
         112,
@@ -3015,7 +3038,8 @@
         114,
         115,
         115,
-        115
+        115,
+        116
       ]
     },
     {
@@ -3140,6 +3164,7 @@
         113,
         113,
         113,
+        114,
         114,
         114
       ]
@@ -3267,6 +3292,7 @@
         111,
         111,
         112,
+        112,
         112
       ]
     },
@@ -3393,6 +3419,7 @@
         109,
         109,
         109,
+        109,
         109
       ]
     },
@@ -3501,6 +3528,7 @@
         98,
         98,
         99,
+        100,
         100,
         100,
         100,
@@ -3645,6 +3673,7 @@
         94,
         94,
         94,
+        94,
         94
       ]
     },
@@ -3771,6 +3800,7 @@
         91,
         91,
         92,
+        92,
         92
       ]
     },
@@ -3800,6 +3830,7 @@
         88,
         88,
         88,
+        89,
         89,
         89,
         89,
@@ -4023,6 +4054,7 @@
         85,
         86,
         86,
+        86,
         86
       ]
     },
@@ -4149,6 +4181,7 @@
         81,
         81,
         82,
+        82,
         82
       ]
     },
@@ -4268,6 +4301,7 @@
         77,
         77,
         77,
+        78,
         78,
         78,
         78,
@@ -4401,6 +4435,7 @@
         71,
         71,
         71,
+        71,
         71
       ]
     },
@@ -4411,6 +4446,7 @@
       "total_pv": 65,
       "like_count": 5,
       "pv_history": [
+        65,
         65,
         65,
         65,
@@ -4653,6 +4689,7 @@
         65,
         65,
         65,
+        65,
         65
       ]
     },
@@ -4663,6 +4700,7 @@
       "total_pv": 58,
       "like_count": 1,
       "pv_history": [
+        58,
         58,
         58,
         58,
@@ -4905,6 +4943,7 @@
         53,
         53,
         55,
+        55,
         55
       ]
     },
@@ -4988,6 +5027,7 @@
         53,
         53,
         53,
+        54,
         54,
         54,
         54,
@@ -5157,6 +5197,7 @@
         48,
         48,
         48,
+        48,
         48
       ]
     },
@@ -5199,6 +5240,7 @@
         43,
         43,
         43,
+        44,
         44,
         44,
         44,
@@ -5409,6 +5451,7 @@
         44,
         44,
         44,
+        44,
         44
       ]
     },
@@ -5437,6 +5480,7 @@
         38,
         38,
         38,
+        39,
         39,
         39,
         39,
@@ -5661,6 +5705,7 @@
         39,
         39,
         39,
+        39,
         39
       ]
     },
@@ -5708,6 +5753,7 @@
         37,
         37,
         37,
+        38,
         38,
         38,
         38,
@@ -5913,6 +5959,134 @@
         37,
         37,
         37,
+        37,
+        37
+      ]
+    },
+    {
+      "key": "nd1754ba66362",
+      "name": "光回線の選び方｜現役ネットワークエンジニアが実測データで徹底比較【2026年版】",
+      "published_at": "",
+      "total_pv": 37,
+      "like_count": 3,
+      "pv_history": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        8,
+        10,
+        16,
+        22,
+        28,
+        33,
         37
       ]
     },
@@ -5923,6 +6097,7 @@
       "total_pv": 35,
       "like_count": 1,
       "pv_history": [
+        35,
         35,
         35,
         35,
@@ -6165,6 +6340,7 @@
         35,
         35,
         35,
+        35,
         35
       ]
     },
@@ -6291,132 +6467,7 @@
         32,
         33,
         33,
-        33
-      ]
-    },
-    {
-      "key": "nd1754ba66362",
-      "name": "光回線の選び方｜現役ネットワークエンジニアが実測データで徹底比較【2026年版】",
-      "published_at": "",
-      "total_pv": 33,
-      "like_count": 3,
-      "pv_history": [
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        8,
-        10,
-        16,
-        22,
-        28,
+        33,
         33
       ]
     },
@@ -6427,6 +6478,7 @@
       "total_pv": 31,
       "like_count": 1,
       "pv_history": [
+        31,
         31,
         31,
         31,
@@ -6669,6 +6721,7 @@
         31,
         31,
         31,
+        31,
         31
       ]
     },
@@ -6725,6 +6778,7 @@
         23,
         23,
         23,
+        24,
         24,
         24,
         24,
@@ -6921,6 +6975,7 @@
         24,
         24,
         24,
+        24,
         24
       ]
     },
@@ -7039,6 +7094,7 @@
         21,
         21,
         21,
+        22,
         22,
         22,
         22,
@@ -7173,6 +7229,7 @@
         19,
         19,
         19,
+        19,
         19
       ]
     },
@@ -7180,7 +7237,7 @@
       "key": "nb6daa1f3e007",
       "name": "AIが作ったパワポを顧客に出すのは手抜き？意外な落とし穴",
       "published_at": "",
-      "total_pv": 16,
+      "total_pv": 17,
       "like_count": 6,
       "pv_history": [
         null,
@@ -7299,7 +7356,8 @@
         15,
         15,
         16,
-        16
+        16,
+        17
       ]
     },
     {
@@ -7415,6 +7473,7 @@
         12,
         12,
         12,
+        13,
         13,
         13,
         13,
@@ -7551,7 +7610,135 @@
         12,
         12,
         12,
+        12,
         12
+      ]
+    },
+    {
+      "key": "n26a3704965c1",
+      "name": "【最大64%OFF】プライム感謝祭は\"時間を買う\"日。共働きの家事を減らす家電・ガジェット6選",
+      "published_at": "",
+      "total_pv": 2,
+      "like_count": 1,
+      "pv_history": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        2
       ]
     }
   ]
